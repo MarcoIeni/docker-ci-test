@@ -1,0 +1,6 @@
+FROM ubuntu:24.10
+
+ARG SCRIPT_ARG
+ENV SCRIPT_ARG2=${SCRIPT_ARG}
+ENV SCRIPT="echo hello && ${SCRIPT_ARG}"
+ENTRYPOINT ["sh", "-c", "${SCRIPT}"]
